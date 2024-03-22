@@ -1,0 +1,42 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1%;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+    max-width: 1000px; 
+    margin: 0 auto; 
+}
+
+.about, .activities, .gallery {
+    margin-bottom: 30px;
+}
+
+.about h2, .activities h2, .gallery h2 {
+    color: #333;
+}
+
+.gallery .image-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.gallery img {
+    width: calc(33.33% - 10px);
+    margin-bottom: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
+}
