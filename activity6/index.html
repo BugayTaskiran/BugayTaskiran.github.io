@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Button Game</title>
+<style>
+  #button {
+    position: absolute;
+    color: rgb(250, 234, 229);    
+    font-size: larger;
+    background-color: blue;
+    width: 150px;
+    height: 100px; 
+  }
+  body, html {
+    height: 300px; 
+    width: 300px; 
+    overflow: hidden; 
+  }
+</style>
+</head>
+<body>
+
+<button id="button" onmouseenter="startGame()">Click Me!</button>
+
+<script>
+let button = document.getElementById('button');
+let level = 1;
+let clicks = 0;
+let timeout = 500;
+let gameStarted = false;
+
+function moveButtonRandomly() {
+  let maxWidth = document.documentElement.clientWidth - button.offsetWidth;
+  let maxHeight = document.documentElement.clientHeight - button.offsetHeight;
+  
+  let newLeft = Math.random() * maxWidth;
+  let newTop = Math.random() * maxHeight;
+  
+  button.style.left = newLeft + 'px';
+  button.style.top = newTop + 'px';
+}
+
+function startMoving() {
+  setTimeout(() => {
+    moveButtonRandomly();
+    startMoving();
+  }, timeout);
+}
+
+function startGame() {
+  if (!gameStarted) {
+    gameStarted = true;
+    startMoving();
+  }
+}
+
+button.addEventListener('click', () => {
+  clicks++;
+  if (clicks >= 3) {
+    level++;
+    clicks = 0;
+    if (level > 6) {
+      alert('You are the winner. You win!!!');
+      return;
+    }
+    timeout -= 100;
+    alert('You are the winner. You can go to the level ' + level );
+  }
+});
+</script>
+
+</body>
+</html>
