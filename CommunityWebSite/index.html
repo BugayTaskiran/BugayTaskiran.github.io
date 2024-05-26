@@ -6,12 +6,12 @@
     <title>Community</title>
 
     <!-- CSS Link  -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles/style.css" />
     <link rel="shortcut icon" href="images/team.png" />
     <!-- Font Awesome CDN  -->
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css    "
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
     />
   </head>
   <body>
@@ -28,6 +28,8 @@
           <li><a href="project.html">Project</a></li>
           <li><a href="community.html">Community</a></li>
           <li><a href="contact.html">Contact</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
+
           <li><a href="login.html">Profile</a></li>
         </ul>
       </nav>
@@ -41,8 +43,28 @@
 
       </div>
     </header>
+    <div id="quoteModal" class="modal">
+      <div class="modal-content">
+          <span class="close">&times;</span>
+          <p id="quoteText"></p>
+          <p id="quoteAuthor"></p>
+      </div>
+  </div>
+
+
     <footer>
-      <p>&copy; 2024 Community Page </p>
-  </footer>
+      <div class="footbar">
+        <div class="subscribe">
+          <input type="email" id="email" placeholder="Enter your email address" />
+          <button id="subscribe-btn">Subscribe</button>
+        </div>
+        <p>&copy; 2024 Community Page</p>
+      </div>
+    </footer>
+
+    
+   <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="script.js"></script>
   </body>
 </html>

@@ -1,32 +1,78 @@
-<link rel="stylesheet" href="activities.css" />
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Activities</title>
-<link rel="stylesheet" href="activities.css" />
+<link rel="stylesheet" href="styles/activities.css" />
+
+<!-- jQuery and jQuery-UI CDN -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+<!-- FullCalendar CSS and JS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.10.0/main.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.10.0/main.min.js"></script>
+
+<!-- DataTables CSS and JS -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+<!-- Link to your activities.js file -->
+<script src="activities.js"></script>
 
 </head>
 <body>
 
 <div class="container">
     <h1>Upcoming Events</h1>
+
+    <div id="calendar"></div>
+
+    <table id="eventsTable">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Place</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Event Title 1</td>
+                <td>21 March 2024</td>
+                <td>14:00</td>
+                <td>Example Place, Example City</td>
+            </tr>
+            <tr>
+                <td>Event Title 2</td>
+                <td>25 March 2024</td>
+                <td>16:00</td>
+                <td>Example Place, Example City</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
     
-    <div class="event">
-        <h2>Event Title 1</h2>
-        <p>History: 21 March 2024</p>
-        <p>Hour: 14:00</p>
-        <p>Place: Example Place, Example City</p>
-        <a href="#" class="button">Details</a>
-    </div>
-    
-    <div class="event">
-        <h2>Event Title 2</h2>
-        <p>History: 25 Mart 2024</p>
-        <p>Hour: 16:00</p>
-        <p>Place: Example Place, Example City</p>
-        <a href="#" class="button">Details</a>
+    <br>
+
+    <div id="addEventDialog" title="Add New Event">
+        <form id="addEventForm">
+            <label for="eventTitle">Event Title:</label>
+            <input type="text" id="eventTitle" name="eventTitle" required><br><br>
+
+            <label for="eventDate">Event Date:</label>
+            <input type="text" id="eventDate" name="eventDate" required><br><br>
+
+            <label for="eventTime">Event Time:</label>
+            <input type="text" id="eventTime" name="eventTime" required><br><br>
+
+            <label for="eventPlace">Event Place:</label>
+            <input type="text" id="eventPlace" name="eventPlace" required><br><br>
+
+<input type="button" id="addEventSubmitBtn" value="Add Event">        </form>
     </div>
 </div>
 
