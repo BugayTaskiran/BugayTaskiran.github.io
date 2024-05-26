@@ -1,0 +1,15 @@
+{
+    "teamMembers": [
+      {
+        "name": "Alice Johnson",
+        "role": "CEO",
+        "bio": "Alice has over 20 years of experience in leading technology companies."
+      },
+      {
+        "name": "Bob Smith",
+        "role": "CTO",
+        "bio": "Bob is a pioneer in AI technology with a decade of specialized experience."
+      }
+    ]
+  }
+  

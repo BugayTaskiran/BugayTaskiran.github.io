@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Community</title>
+
+    <!-- CSS Link  -->
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="shortcut icon" href="images/team.png" />
+    <!-- Font Awesome CDN  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <input type="checkbox" id="check" />
+        <label for="check" id="check-btn">
+          <i class="fas fa-bars"></i>
+        </label>
+        <img src="images/Interior-logo.png" alt="logo" />
+        <ul>
+          <li><a href="index.html" class="action">Home</a></li>
+          <li><a href="activities.html">Activities</a></li>
+          <li><a href="project.html">Project</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
+
+          <li><a href="login.html">Profile</a></li>
+        </ul>
+      </nav>
+      <div class="head">
+        <h1>
+          WELCOME TO <br />
+          COMMUNITY!
+        </h1>
+        <p>More than a community.</p>
+        <button onclick="window.location.href='register.html'">REGISTER!</button>
+
+      </div>
+    </header>
+    <div id="quoteModal" class="modal">
+      <div class="modal-content">
+          <span class="close">&times;</span>
+          <p id="quoteText"></p>
+          <p id="quoteAuthor"></p>
+      </div>
+  </div>
+
+
+    <footer>
+      <div class="footbar">
+        <div class="subscribe">
+          <input type="email" id="email" placeholder="Enter your email address" />
+          <button id="subscribe-btn">Subscribe</button>
+        </div>
+        <p>&copy; 2024 Community Page</p>
+      </div>
+    </footer>
+
+    
+   <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="script.js"></script>
+  </body>
+</html>
