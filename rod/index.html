@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Alperen Bugay Taşkıran</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    nav {
+      background-color: #2c3e50;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: color 0.3s;
+      cursor: pointer;
+    }
+
+    nav a:hover {
+      color: #f39c12;
+    }
+
+    header {
+      background-color: #1e2a38;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 1rem;
+    }
+
+    h3 {
+      margin: 0;
+    }
+
+    p {
+      margin: 0.2rem 0 0.8rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a onclick="showPage('home')">Anasayfa</a>
+    <a onclick="showPage('about')">Hakkımda</a>
+    <a onclick="showPage('projects')">Projeler</a>
+    <a onclick="showPage('contact')">İletişim</a>
+  </nav>
+
+  <header>
+    <h1 id="page-title">Anasayfa</h1>
+  </header>
+
+  <div class="container" id="content">
+    <p>Alperen Bugay Taşkıran'a ait kişisel web sayfasına hoş geldiniz.</p>
+  </div>
+
+  <script>
+    function showPage(page) {
+      const title = document.getElementById('page-title');
+      const content = document.getElementById('content');
+
+      if (page === 'home') {
+        title.innerText = "Anasayfa";
+        content.innerHTML = "<p>Alperen Bugay Taşkıran'a ait kişisel web sayfasına hoş geldiniz.</p>";
+      }
+
+      else if (page === 'about') {
+        title.innerText = "Hakkımda";
+        content.innerHTML = `
+          <p>Ben Alperen Bugay Taşkıran. Bilgisayar mühendisliği öğrencisiyim. Yazılım geliştirme, sistem tasarımı ve teknolojiyi insan odaklı çözümler üretmek için kullanmayı seviyorum. Mini sumo robot yarışmaları, VR toplantı odaları ve siber güvenlik gibi çeşitli alanlarda projeler yaptım.</p>
+        `;
+      }
+
+      else if (page === 'projects') {
+        title.innerText = "Projeler";
+        content.innerHTML = `
+          <ul>
+            <li>
+              <h3>Flashtech Terminal Otomasyon Sistemi</h3>
+              <p>MEGA Endüstri'de geliştirdiğim .NET tabanlı bir sistemdir.</p>
+            </li>
+            <li>
+              <h3>VR Meeting Room</h3>
+              <p>Katılımcıların avatarlarla VR ortamında toplantı yapabileceği bir uygulama.</p>
+            </li>
+            <li>
+              <h3>Path Blocker Oyunu</h3>
+              <p>Yapay zekanın yol bulma algoritmalarıyla seviyeleri çözebildiği bir bulmaca oyunu.</p>
+            </li>
+          </ul>
+        `;
+      }
+
+      else if (page === 'contact') {
+        title.innerText = "İletişim";
+        content.innerHTML = `
+          <p>📧 E-posta: <a href="mailto:bugay_94@hotmail.com">bugay_94@hotmail.com</a></p>
+          <p>💼 LinkedIn: <a href="https://www.linkedin.com/in/bugay-taskiran/" target="_blank">linkedin.com/in/bugay-taskiran</a></p>
+        `;
+      }
+    }
+  </script>
+
+</body>
+</html>
