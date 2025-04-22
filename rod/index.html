@@ -68,6 +68,18 @@
     p {
       margin: 0.2rem 0 0.8rem;
     }
+
+    .profile-photo {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    }
   </style>
 </head>
 <body>
@@ -100,6 +112,7 @@
       else if (page === 'about') {
         title.innerText = "Hakkımda";
         content.innerHTML = `
+          <img src="1.jpg" alt="Alperen Bugay Taşkıran" class="profile-photo" />
           <p>Ben Alperen Bugay Taşkıran. Bilgisayar mühendisliği öğrencisiyim. Yazılım geliştirme, sistem tasarımı ve teknolojiyi insan odaklı çözümler üretmek için kullanmayı seviyorum. Mini sumo robot yarışmaları, VR toplantı odaları ve siber güvenlik gibi çeşitli alanlarda projeler yaptım.</p>
         `;
       }
