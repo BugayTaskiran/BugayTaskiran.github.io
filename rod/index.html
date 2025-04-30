@@ -44,7 +44,7 @@
     }
 
     .container {
-      max-width: 800px;
+      max-width: 900px;
       margin: 2rem auto;
       padding: 2rem;
       background-color: white;
@@ -52,37 +52,219 @@
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
     }
 
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    li {
-      margin-bottom: 1rem;
-    }
-
-    h3 {
-      margin: 0;
-    }
-
-    p {
-      margin: 0.2rem 0 0.8rem;
-    }
-
     .profile-photo {
       width: 150px;
       height: 150px;
       border-radius: 50%;
       object-fit: cover;
-      margin-bottom: 1rem;
+      margin: 1rem auto;
       display: block;
-      margin-left: auto;
-      margin-right: auto;
       box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    }
+
+    .card {
+      background-color: #34495e;
+      color: white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      cursor: pointer;
+      width: 200px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .gallery {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+
+    .gallery img {
+      width: 200px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.2);
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .skill {
+      background-color: #ecf0f1;
+      padding: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      flex: 1 1 150px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .skill:hover {
+      background-color: #d0d7de;
+    }
+
+    .skill img {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 0.5rem;
+    }
+
+    .skill-description {
+      margin-top: 0.5rem;
+      display: none;
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    .project {
+      background-color: #ecf0f1;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      overflow: hidden;
+    }
+
+    .see-more {
+      margin-top: 0.5rem;
+      display: inline-block;
+      background-color: #2c3e50;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .see-more:hover {
+      background-color: #f39c12;
+    }
+
+    .project-details {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease-out;
+      margin-top: 0;
+    }
+
+    .project-details.active {
+      max-height: 1000px;
+      margin-top: 0.8rem;
+    }
+
+    .project-gallery {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+      overflow-x: auto;
+      padding-bottom: 1rem;
+    }
+
+    .project-gallery img {
+      width: 200px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+
+    .project-gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .contact-form input, .contact-form textarea {
+      padding: 0.8rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    .contact-form button {
+      padding: 0.8rem;
+      background-color: #2c3e50;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    /* Modal for image preview */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1001;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.9);
+      cursor: pointer;
+    }
+
+    .modal-content-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .modal-content {
+      max-width: 90%;
+      max-height: 90vh;
+      object-fit: contain;
+      cursor: default;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .close {
+      position: fixed;
+      top: 30px;
+      right: 40px;
+      color: #f1f1f1;
+      font-size: 40px;
+      font-weight: bold;
+      transition: 0.3s;
+      cursor: pointer;
+      z-index: 1002;
+      text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #bbb;
+      text-decoration: none;
+      cursor: pointer;
     }
   </style>
 </head>
-<body>
+<body onload="showPage('home')">
 
   <nav>
     <a onclick="showPage('home')">Anasayfa</a>
@@ -99,6 +281,14 @@
     <p>Alperen Bugay Taşkıran'a ait kişisel web sayfasına hoş geldiniz.</p>
   </div>
 
+  <!-- Modal for image preview -->
+  <div id="myModal" class="modal" onclick="closeModal()">
+    <span class="close" onclick="event.stopPropagation(); closeModal()">&times;</span>
+    <div class="modal-content-container">
+      <img class="modal-content" id="modal-img" onclick="event.stopPropagation()">
+    </div>
+  </div>
+
   <script>
     function showPage(page) {
       const title = document.getElementById('page-title');
@@ -106,48 +296,166 @@
 
       if (page === 'home') {
         title.innerText = "Anasayfa";
-        content.innerHTML = "<p>Alperen Bugay Taşkıran'a ait kişisel web sayfasına hoş geldiniz.</p>";
+        content.innerHTML = `
+          <div style="text-align:center">
+            <img src="1.jpg" alt="Alperen Bugay Taşkıran" class="profile-photo" />
+            <h2 style="margin-top:1rem;">Merhaba, ben Alperen Bugay Taşkıran</h2>
+            <p style="font-size:1.1rem;margin:1rem 0;">Kod yazmayı, sistemler kurmayı ve teknolojiyi insan odaklı çözümler üretmek için kullanmayı seviyorum.</p>
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:1rem; justify-content:center; margin-top:2rem;">
+            <div class="card" onclick="showPage('about')"><h3>Hakkımda</h3></div>
+            <div class="card" onclick="showPage('projects')"><h3>Projelerim</h3></div>
+            <div class="card" onclick="showPage('contact')"><h3>İletişim</h3></div>
+          </div>
+        `;
       }
 
       else if (page === 'about') {
         title.innerText = "Hakkımda";
         content.innerHTML = `
-          <img src="1.jpg" alt="Alperen Bugay Taşkıran" class="profile-photo" />
-          <p>Ben Alperen Bugay Taşkıran. ANKARA YILDIRIM BEYAZIT ÜNİVERSİTESİ'nde Bilgisayar mühendisliği 4. sınıf öğrencisiyim.</p>
+          <img src="1.jpg" class="profile-photo" />
+          <p>Ben Alperen Bugay Taşkıran. Bilgisayar mühendisliği öğrencisiyim. Yazılım geliştirme, sistem tasarımı ve teknolojiyi insan odaklı çözümler üretmek için kullanmayı seviyorum. Mini sumo robot yarışmaları, VR toplantı odaları ve siber güvenlik gibi çeşitli alanlarda projeler yaptım.</p>
+          <h3 style="margin-top:2rem;">Foto Galeri</h3>
+          <div class="gallery">
+            <img src="myfoto1.jpg" onclick="openModal(this)" />
+            <img src="myfoto2.jpg" onclick="openModal(this)" />
+            <img src="myfoto3.jpg" onclick="openModal(this)" />
+          </div>
+          <h3 style="margin-top:2rem;">Yetkinliklerim</h3>
+          <div class="skills">
+            <div class="skill" onclick="toggleDescription(this)">
+              <img src="python.png" /><div>Python</div>
+              <div class="skill-description">Veri analizi, otomasyon ve yapay zeka projeleri.</div>
+            </div>
+            <div class="skill" onclick="toggleDescription(this)">
+              <img src="java.png" /><div>Java</div>
+              <div class="skill-description">Masaüstü ve mobil uygulama geliştirme.</div>
+            </div>
+            <div class="skill" onclick="toggleDescription(this)">
+              <img src="csharp.png" /><div>.NET</div>
+              <div class="skill-description">.NET tabanlı masaüstü ve web uygulamaları.</div>
+            </div>
+            <div class="skill" onclick="toggleDescription(this)">
+              <img src="angular.png" /><div>Angular</div>
+              <div class="skill-description">.NET tabanlı masaüstü ve web uygulamaları.</div>
+            </div>
+            <div class="skill" onclick="toggleDescription(this)">
+              <img src="html.png" /><div>HTML</div>
+              <div class="skill-description">.NET tabanlı masaüstü ve web uygulamaları.</div>
+            </div>
+            <div class="skill" onclick="toggleDescription(this)">
+              <img src="css.png" /><div>CSS</div>
+              <div class="skill-description">.NET tabanlı masaüstü ve web uygulamaları.</div>
+            </div>
+            <div class="skill" onclick="toggleDescription(this)">
+              <img src="git.png" /><div>Git</div>
+              <div class="skill-description">.NET tabanlı masaüstü ve web uygulamaları.</div>
+            </div>
+            <div class="skill" onclick="toggleDescription(this)">
+              <img src="docker.png" /><div>Docker</div>
+              <div class="skill-description">.NET tabanlı masaüstü ve web uygulamaları.</div>
+            </div>
+          </div>
         `;
       }
 
       else if (page === 'projects') {
         title.innerText = "Projeler";
         content.innerHTML = `
-          <ul>
-          <li>
-              <h3>Project 1 </h3>
-              <p>This page will be edited soon.</p>
-            </li>
-            <!-- <li>
-              <h3>Flashtech Terminal Otomasyon Sistemi</h3>
-              <p>MEGA Endüstri'de geliştirdiğim .NET tabanlı bir sistemdir.</p>
-            </li>
-            <li>
-              <h3>VR Meeting Room</h3>
-              <p>Katılımcıların avatarlarla VR ortamında toplantı yapabileceği bir uygulama.</p>
-            </li>
-            <li>
-              <h3>Path Blocker Oyunu</h3>
-              <p>Yapay zekanın yol bulma algoritmalarıyla seviyeleri çözebildiği bir bulmaca oyunu.</p>
-            </li> -->
-          </ul>
+          <div class="project">
+            <h3>Inventory Management System</h3>
+            <p>MEGA Endüstri'de geliştirdiğim .NET tabanlı bir sistemdir.</p>
+            <div class="see-more" onclick="toggleDetails(this)">Detayları Göster</div>
+            <div class="project-details">
+              <p>Stok kontrol için kullanılan uygulamam, .NET ve SQL ile geliştirildi. SQL bağlantılı ve kullanıcı girişli çalışmakta.</p>
+              <h4>Özellikler:</h4>
+              <ul>
+                <li>Stok kontrol ve veri ilşeme ve silme</li>
+                <li>Çoklu kullanıcı</li>
+                <li>Kullanıcı dostu arayüz</li>
+                <li>Yedekleme ve geri yükleme sistemleri</li>
+              </ul>
+              <div class="project-gallery">
+                <img src="foto1.jpg" onclick="openModal(this)" alt="Login">
+                <img src="foto2.jpg" onclick="openModal(this)" alt="Categories">
+                <img src="foto3.jpg" onclick="openModal(this)" alt="Product">
+              </div>
+            </div>
+          </div>
+          <div class="project">
+            <h3>VR Meeting Room</h3>
+            <p>Katılımcıların avatarlarla VR ortamında toplantı yapabileceği bir uygulama.</p>
+            <div class="see-more" onclick="toggleDetails(this)">Detayları Göster</div>
+            <div class="project-details">
+              <p>Unity ve Oculus SDK kullanılarak geliştirilen bu proje, sanal toplantı ortamlarında avatar ve göz takibi ile interaktif bir ortam sunuyor.</p>
+              <h4>Özellikler:</h4>
+              <ul>
+                <li>3D avatar oluşturma</li>
+                <li>Gerçek zamanlı ses ve video iletişimi</li>
+                <li>Doküman paylaşımı</li>
+                <li>Oda tasarımı özelleştirme</li>
+              </ul>
+              <div class="project-gallery">
+                <img src="vr1.jpg" onclick="openModal(this)" alt="VR Meeting 1">
+                <img src="vr2.jpg" onclick="openModal(this)" alt="VR Meeting 2">
+                <img src="vr3.jpg" onclick="openModal(this)" alt="VR Meeting 3">
+              </div>
+            </div>
+          </div>
         `;
       }
 
       else if (page === 'contact') {
         title.innerText = "İletişim";
         content.innerHTML = `
-          <p>📧 E-posta: <a href="mailto:bugay_94@hotmail.com">bugay_94@hotmail.com</a></p>
-          <p>💼 LinkedIn: <a href="https://www.linkedin.com/in/bugay-taskiran/" target="_blank">linkedin.com/in/bugay-taskiran</a></p>
+          <form class="contact-form">
+            <input type="text" placeholder="Ad Soyad" required />
+            <input type="email" placeholder="E-posta" required />
+            <textarea placeholder="Mesaj" required></textarea>
+            <button type="submit">Gönder</button>
+
+            <p>📧 E-posta: <a href="mailto:bugay_94@hotmail.com">bugay_94@hotmail.com</a></p>
+            <p>💼 LinkedIn: <a href="https://www.linkedin.com/in/bugay-taskiran/" target="_blank">linkedin.com/in/bugay-taskiran</a></p>
+          </form>
         `;
       }
+    }
+
+    function toggleDetails(button) {
+      const details = button.nextElementSibling;
+      details.classList.toggle('active');
+      
+      if (details.classList.contains('active')) {
+        button.textContent = 'Detayları Gizle';
+      } else {
+        button.textContent = 'Detayları Göster';
+      }
+    }
+
+    function toggleDescription(skillDiv) {
+      const description = skillDiv.querySelector('.skill-description');
+      description.style.display = description.style.display === 'block' ? 'none' : 'block';
+    }
+
+    function openModal(img) {
+      const modal = document.getElementById("myModal");
+      const modalImg = document.getElementById("modal-img");
+      modal.style.display = "block";
+      modalImg.src = img.src;
+      document.body.style.overflow = "hidden";
+      
+      // ESC tuşuyla kapatma
+      document.addEventListener('keydown', function escClose(event) {
+        if (event.key === "Escape") {
+          closeModal();
+          document.removeEventListener('keydown', escClose);
+        }
+      });
+    }
+
+    function closeModal() {
+      document.getElementById("myModal").style.display = "none";
+      document.body.style.overflow = "auto";
     }
   </script>
 
