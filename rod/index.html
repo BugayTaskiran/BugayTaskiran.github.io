@@ -299,27 +299,27 @@
         content.innerHTML = `
           <div style="text-align:center">
             <img src="1.jpg" alt="Alperen Bugay Taşkıran" class="profile-photo" />
-            <h2 style="margin-top:1rem;">Merhaba, ben Alperen Bugay Taşkıran</h2>
-            <p style="font-size:1.1rem;margin:1rem 0;">Kod yazmayı, sistemler kurmayı ve teknolojiyi insan odaklı çözümler üretmek için kullanmayı seviyorum.</p>
+            <h2 style="margin-top:1rem;">Hello, I am Alperen Bugay Taşkıran</h2>
+            <p style="font-size:1.1rem;margin:1rem 0;">I love writing code, building systems, and using technology to create human-centered solutions.</p>
           </div>
           <div style="display:flex; flex-wrap:wrap; gap:1rem; justify-content:center; margin-top:2rem;">
-            <div class="card" onclick="showPage('about')"><h3>Hakkımda</h3></div>
-            <div class="card" onclick="showPage('projects')"><h3>Projelerim</h3></div>
-            <div class="card" onclick="showPage('contact')"><h3>İletişim</h3></div>
+            <div class="card" onclick="showPage('about')"><h3>About Me</h3></div>
+            <div class="card" onclick="showPage('projects')"><h3>Projects</h3></div>
+            <div class="card" onclick="showPage('contact')"><h3>Contact Me</h3></div>
           </div>
         `;
       }
 
       else if (page === 'about') {
-        title.innerText = "Hakkımda";
+        title.innerText = "About Me";
         content.innerHTML = `
           <img src="1.jpg" class="profile-photo" />
           <p>I am Alperen Bugay Taşkıran. I am a computer engineering student. I love software development, system design and using technology to produce human-centered solutions. I have done projects in various fields such as mini sumo robot competitions, VR meeting rooms and cyber security.</p>
           <h3 style="margin-top:2rem;">Gallery</h3>
           <div class="gallery">
             <img src="myfoto1.jpg" onclick="openModal(this)" />
-            <img src="myfoto2.jpg" onclick="openModal(this)" />
-            <img src="myfoto3.jpg" onclick="openModal(this)" />
+            <!-- <img src="myfoto2.jpg" onclick="openModal(this)" /> -->
+            <!-- <img src="myfoto3.jpg" onclick="openModal(this)" /> -->
           </div>
           <h3 style="margin-top:2rem;">My Skills</h3>
           <div class="skills">
