@@ -267,18 +267,18 @@
 <body onload="showPage('home')">
 
   <nav>
-    <a onclick="showPage('home')">Anasayfa</a>
-    <a onclick="showPage('about')">Hakkımda</a>
-    <a onclick="showPage('projects')">Projeler</a>
-    <a onclick="showPage('contact')">İletişim</a>
+    <a onclick="showPage('home')">Home Page</a>
+    <a onclick="showPage('about')">About me</a>
+    <a onclick="showPage('projects')">Projects</a>
+    <a onclick="showPage('contact')">Contact me</a>
   </nav>
 
   <header>
-    <h1 id="page-title">Anasayfa</h1>
+    <h1 id="page-title">Home Page</h1>
   </header>
 
   <div class="container" id="content">
-    <p>Alperen Bugay Taşkıran'a ait kişisel web sayfasına hoş geldiniz.</p>
+    <p>Welcome to the personal web page of Alperen Bugay Taşkıran.</p>
   </div>
 
   <!-- Modal for image preview -->
@@ -314,66 +314,66 @@
         title.innerText = "Hakkımda";
         content.innerHTML = `
           <img src="1.jpg" class="profile-photo" />
-          <p>Ben Alperen Bugay Taşkıran. Bilgisayar mühendisliği öğrencisiyim. Yazılım geliştirme, sistem tasarımı ve teknolojiyi insan odaklı çözümler üretmek için kullanmayı seviyorum. Mini sumo robot yarışmaları, VR toplantı odaları ve siber güvenlik gibi çeşitli alanlarda projeler yaptım.</p>
-          <h3 style="margin-top:2rem;">Foto Galeri</h3>
+          <p>I am Alperen Bugay Taşkıran. I am a computer engineering student. I love software development, system design and using technology to produce human-centered solutions. I have done projects in various fields such as mini sumo robot competitions, VR meeting rooms and cyber security.</p>
+          <h3 style="margin-top:2rem;">Gallery</h3>
           <div class="gallery">
             <img src="myfoto1.jpg" onclick="openModal(this)" />
             <img src="myfoto2.jpg" onclick="openModal(this)" />
             <img src="myfoto3.jpg" onclick="openModal(this)" />
           </div>
-          <h3 style="margin-top:2rem;">Yetkinliklerim</h3>
+          <h3 style="margin-top:2rem;">My Skills</h3>
           <div class="skills">
             <div class="skill" onclick="toggleDescription(this)">
               <img src="python.png" /><div>Python</div>
-              <div class="skill-description">Veri analizi, otomasyon ve yapay zeka projeleri.</div>
+              <div class="skill-description">Data analysis, automation and artificial intelligence projects.</div>
             </div>
             <div class="skill" onclick="toggleDescription(this)">
               <img src="java.png" /><div>Java</div>
-              <div class="skill-description">Masaüstü ve mobil uygulama geliştirme.</div>
+              <div class="skill-description">Desktop and mobile application development.</div>
             </div>
             <div class="skill" onclick="toggleDescription(this)">
               <img src="csharp.png" /><div>.NET</div>
-              <div class="skill-description">.NET tabanlı masaüstü ve web uygulamaları.</div>
+              <div class="skill-description">.NET based desktop and web applications.</div>
             </div>
             <div class="skill" onclick="toggleDescription(this)">
               <img src="angular.png" /><div>Angular</div>
-              <div class="skill-description">.NET tabanlı masaüstü ve web uygulamaları.</div>
+              <div class="skill-description">.NET based desktop and web applications.</div>
             </div>
             <div class="skill" onclick="toggleDescription(this)">
               <img src="html.png" /><div>HTML</div>
-              <div class="skill-description">.NET tabanlı masaüstü ve web uygulamaları.</div>
+              <div class="skill-description">.NET based desktop and web applications.</div>
             </div>
             <div class="skill" onclick="toggleDescription(this)">
               <img src="css.png" /><div>CSS</div>
-              <div class="skill-description">.NET tabanlı masaüstü ve web uygulamaları.</div>
+              <div class="skill-description">.NET based desktop and web applications.</div>
             </div>
             <div class="skill" onclick="toggleDescription(this)">
               <img src="git.png" /><div>Git</div>
-              <div class="skill-description">.NET tabanlı masaüstü ve web uygulamaları.</div>
+              <div class="skill-description">.NET based desktop and web applications.</div>
             </div>
             <div class="skill" onclick="toggleDescription(this)">
               <img src="docker.png" /><div>Docker</div>
-              <div class="skill-description">.NET tabanlı masaüstü ve web uygulamaları.</div>
+              <div class="skill-description">.NET based desktop and web applications.</div>
             </div>
           </div>
         `;
       }
 
       else if (page === 'projects') {
-        title.innerText = "Projeler";
+        title.innerText = "Projects";
         content.innerHTML = `
           <div class="project">
             <h3>Inventory Management System</h3>
-            <p>MEGA Endüstri'de geliştirdiğim .NET tabanlı bir sistemdir.</p>
-            <div class="see-more" onclick="toggleDetails(this)">Detayları Göster</div>
+            <p>It is a .NET based system that I developed at MEGA Industry.</p>
+            <div class="see-more" onclick="toggleDetails(this)">See More</div>
             <div class="project-details">
-              <p>Stok kontrol için kullanılan uygulamam, .NET ve SQL ile geliştirildi. SQL bağlantılı ve kullanıcı girişli çalışmakta.</p>
-              <h4>Özellikler:</h4>
+              <p>My application used for stock control was developed with .NET and SQL. It works with SQL connection and user login.</p>
+              <h4>Features:</h4>
               <ul>
-                <li>Stok kontrol ve veri ilşeme ve silme</li>
-                <li>Çoklu kullanıcı</li>
-                <li>Kullanıcı dostu arayüz</li>
-                <li>Yedekleme ve geri yükleme sistemleri</li>
+                <li>Stock control and data processing and deletion</li>
+                <li>Multi-user</li>
+                <li>User friendly interface</li>
+                <li>Backup and restore systems</li>
               </ul>
               <div class="project-gallery">
                 <img src="foto1.jpg" onclick="openModal(this)" alt="Login">
@@ -384,16 +384,16 @@
           </div>
           <div class="project">
             <h3>VR Meeting Room</h3>
-            <p>Katılımcıların avatarlarla VR ortamında toplantı yapabileceği bir uygulama.</p>
-            <div class="see-more" onclick="toggleDetails(this)">Detayları Göster</div>
+            <p>An application where participants can hold meetings in a VR environment with avatars.</p>
+            <div class="see-more" onclick="toggleDetails(this)">See More</div>
             <div class="project-details">
-              <p>Unity ve Oculus SDK kullanılarak geliştirilen bu proje, sanal toplantı ortamlarında avatar ve göz takibi ile interaktif bir ortam sunuyor.</p>
-              <h4>Özellikler:</h4>
+              <p>Developed using Unity and Oculus SDK, this project offers an interactive environment with avatars and eye tracking in virtual meeting environments.</p>
+              <h4>Features:</h4>
               <ul>
-                <li>3D avatar oluşturma</li>
-                <li>Gerçek zamanlı ses ve video iletişimi</li>
-                <li>Doküman paylaşımı</li>
-                <li>Oda tasarımı özelleştirme</li>
+                <li>3D avatar creation</li>
+                <li>Real-time audio and video communication</li>
+                <li>Document sharing</li>
+                <li>Room design customization</li>
               </ul>
               <div class="project-gallery">
                 <img src="vr1.jpg" onclick="openModal(this)" alt="VR Meeting 1">
@@ -409,10 +409,10 @@
         title.innerText = "İletişim";
         content.innerHTML = `
           <form class="contact-form">
-            <input type="text" placeholder="Ad Soyad" required />
-            <input type="email" placeholder="E-posta" required />
+            <input type="text" placeholder="Name Surname" required />
+            <input type="email" placeholder="E-mail" required />
             <textarea placeholder="Mesaj" required></textarea>
-            <button type="submit">Gönder</button>
+            <button type="submit">Send</button>
 
             <p>📧 E-posta: <a href="mailto:bugay_94@hotmail.com">bugay_94@hotmail.com</a></p>
             <p>💼 LinkedIn: <a href="https://www.linkedin.com/in/bugay-taskiran/" target="_blank">linkedin.com/in/bugay-taskiran</a></p>
@@ -426,9 +426,9 @@
       details.classList.toggle('active');
       
       if (details.classList.contains('active')) {
-        button.textContent = 'Detayları Gizle';
+        button.textContent = 'Hide Details';
       } else {
-        button.textContent = 'Detayları Göster';
+        button.textContent = 'See More';
       }
     }
 
