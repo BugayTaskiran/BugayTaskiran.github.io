@@ -262,6 +262,28 @@
       text-decoration: none;
       cursor: pointer;
     }
+
+    /* CV İndirme Butonu Stili */
+    .cv-button {
+      display: inline-block;
+      background-color: #f39c12;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 1rem 0;
+      transition: background-color 0.3s;
+    }
+    
+    .cv-button:hover {
+      background-color: #e67e22;
+    }
+    
+    .cv-container {
+      text-align: center;
+      margin: 1.5rem 0;
+    }
   </style>
 </head>
 <body onload="showPage('home')">
@@ -295,7 +317,7 @@
       const content = document.getElementById('content');
 
       if (page === 'home') {
-        title.innerText = "Anasayfa";
+        title.innerText = "Home Page";
         content.innerHTML = `
           <div style="text-align:center">
             <img src="1.jpg" alt="Alperen Bugay Taşkıran" class="profile-photo" />
@@ -306,8 +328,7 @@
             <div class="card" onclick="showPage('about')"><h3>About Me</h3></div>
             <div class="card" onclick="showPage('projects')"><h3>Projects</h3></div>
             <div class="card" onclick="showPage('contact')"><h3>Contact Me</h3></div>
-          </div>
-        `;
+          </div>`;
       }
 
       else if (page === 'about') {
@@ -315,6 +336,11 @@
         content.innerHTML = `
           <img src="1.jpg" class="profile-photo" />
           <p>I am Alperen Bugay Taşkıran. I am a computer engineering student. I love software development, system design and using technology to produce human-centered solutions. I have done projects in various fields such as mini sumo robot competitions, VR meeting rooms and cyber security.</p>
+          
+          <div class="cv-container">
+            <a href="guncelCV.pdf" download="Alperen_Bugay_Taskiran_CV.pdf" class="cv-button">Download My CV</a>
+          </div>
+          
           <h3 style="margin-top:2rem;">Gallery</h3>
           <div class="gallery">
             <img src="myfoto1.jpg" onclick="openModal(this)" />
@@ -355,8 +381,7 @@
               <img src="docker.png" /><div>Docker</div>
               <div class="skill-description">.NET based desktop and web applications.</div>
             </div>
-          </div>
-        `;
+          </div>`;
       }
 
       else if (page === 'projects') {
@@ -401,23 +426,21 @@
                 <img src="vr3.jpg" onclick="openModal(this)" alt="VR Meeting 3">
               </div>
             </div>
-          </div>
-        `;
+          </div>`;
       }
 
       else if (page === 'contact') {
-        title.innerText = "İletişim";
+        title.innerText = "Contact";
         content.innerHTML = `
           <form class="contact-form">
             <input type="text" placeholder="Name Surname" required />
             <input type="email" placeholder="E-mail" required />
-            <textarea placeholder="Mesaj" required></textarea>
+            <textarea placeholder="Message" required></textarea>
             <button type="submit">Send</button>
 
-            <p>📧 E-posta: <a href="mailto:bugay_94@hotmail.com">bugay_94@hotmail.com</a></p>
+            <p>📧 E-mail: <a href="mailto:bugay_94@hotmail.com">bugay_94@hotmail.com</a></p>
             <p>💼 LinkedIn: <a href="https://www.linkedin.com/in/bugay-taskiran/" target="_blank">linkedin.com/in/bugay-taskiran</a></p>
-          </form>
-        `;
+          </form>`;
       }
     }
 
